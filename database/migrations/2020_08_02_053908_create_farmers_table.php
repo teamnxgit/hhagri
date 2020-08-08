@@ -16,11 +16,12 @@ class CreateFarmersTable extends Migration
         Schema::create('farmers', function (Blueprint $table) {
             $table->string('farmer_code');
             $table->string('title');
-            $table->string('full_name');
+            $table->string('full_name')->nullable();
             $table->string('short_name');
+            $table->string('gender');
             $table->string('nic');
             $table->string('address');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('whatsapp')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
