@@ -74,4 +74,7 @@
         </div>
     </div>
 </div>
+<script>
+    $("#sidebar-wrapper").remove();
+</script>
 @endsection
