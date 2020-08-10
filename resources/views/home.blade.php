@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <a href="/farmers">Grower Database</a>
                 </div>
             </div>
         </div>
