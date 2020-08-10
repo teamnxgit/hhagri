@@ -23,8 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function(){
     // Farmer
-    Route::any('/farmer', 'FarmerController@index')->name('Farmer');
+    Route::any('/farmers', 'FarmerController@index')->name('Farmer');
     Route::get('/farmer/new', 'FarmerController@new')->name('New Farmer');
+    Route::get('/farmer/{farmer_code}', 'FarmerController@farmer')->name('Farmer Details');
     Route::post('/farmer/add', 'FarmerController@add');
     Route::post('/farmer/rem', 'FarmerController@rem');
 

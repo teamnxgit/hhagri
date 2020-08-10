@@ -11,12 +11,25 @@ use Redirect;
 class FarmerController extends Controller
 {
     public function index(Request $request){
-        $data['farmers']=Farmer::all();
+        $keyword = $request->input('keyword');
+        $data['keyword']=$keyword;
+        if($keyword==null||$keyword==''){
+            $data['farmers']=Farmer::all();
+        }
+        else {
+            $data['farmers']=Farmer::where('farmer_code','like','%'.$keyword.'%')->orWhere('full_name','like','%'.$keyword.'%')->orWhere('nic','like','%'.$keyword.'%')->orderBy('created_at','desc')->paginate(100);
+        }
         return view('cms.farmer.farmers')->with($data);
     }
 
     public function new(){
         return view('cms.farmer.new');
+    }
+
+    public function farmer($farmer_code){
+        $farmer = Farmer::findOrFail($farmer_code);
+        $data['farmer']=$farmer;
+        return view('cms.farmer.farmer')->with($data);
     }
 
     public function add(Request $request){
@@ -44,7 +57,7 @@ class FarmerController extends Controller
         $farmer->save();
 
         Session::flash('success','Farmer added to Database');
-        Redirect::back();
+        return Redirect::back();
     }
 
     public function rem(Request $request){
@@ -56,6 +69,6 @@ class FarmerController extends Controller
         $farmer->delete();
 
         Session::flash('success','Farmer removed from Database');
-        Redirect('/farmers');
+        return Redirect('/farmers');
     }
 }

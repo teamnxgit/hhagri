@@ -43,7 +43,7 @@
                                 <td>{{$farmer->farmer_code}}</td>
                             <td><a href="farmer/{{$farmer->farmer_code}}">{{$farmer->full_name}}</a></td>
                                 <td>
-                                    @can('Farmer Admin')
+                                    @can('admin')
                                     {!! Form::open(['url' => '/farmer/rem']) !!}
                                         {!! Form::hidden('farmer_code', $farmer->farmer_code) !!}
                                         {!! Form::button('<i class="fas fa-trash"></i>', ['class'=>'btn btn-danger','type'=>'submit']) !!}

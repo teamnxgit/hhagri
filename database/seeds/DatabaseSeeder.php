@@ -14,8 +14,10 @@ class DatabaseSeeder extends Seeder
     public function run(){
         // Defining Permissions
         $permissions = [
-            ['name' => 'Farmer'],
-            ['name' => 'User'],
+            ['name' => 'Farmer Operator'],
+            ['name' => 'Farmer Admin'],
+            
+            ['name' => 'System Admin'],
         ];
         // Inserting Permission Into Database which not exist
         foreach ($permissions as $permission) {
@@ -25,7 +27,6 @@ class DatabaseSeeder extends Seeder
         }
 
         $user = User::where('email','mail2snasik@gmail.com')->first();
-
-        $user->givePermissionTo('User');
+        $user->givePermissionTo('System Admin');
     }
 }

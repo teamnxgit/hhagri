@@ -2,7 +2,7 @@
 
 @section('content')
 
-@can('User')
+@can('System Admin')
     @include('navbar.users')
         <div class="col-lg-12 p-3">
             <div class="row">

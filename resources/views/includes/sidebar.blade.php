@@ -3,7 +3,7 @@ if (Auth::check()) {
 @endphp
     @section('sidebar')
     <div class="p-3 border-bottom border-secondary sidebar-heading">
-        <img src="{{asset('images/dsms.png')}}" alt="">
+        <img src="{{asset('images/logo.png')}}" alt="">
     </div>
     <div class="user text-light py-3 border-bottom border-secondary row m-0">
         <div class="col-4 p-0 pl-3">
@@ -24,11 +24,11 @@ if (Auth::check()) {
     
         <a href="/dashbaord" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fas fa-tachometer-alt mr-3" aria-hidden="true"></i>Dashboard</a>
         
-        @can('Farmer')
-            <a href="/farmer" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-fw fa-male mr-3" aria-hidden="true"></i>Farmer</a>
+        @can('Farmer Operator')
+            <a href="/farmers" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-fw fa-male mr-3" aria-hidden="true"></i>Farmer</a>
         @endcan
         
-        @can('User')
+        @can('System Admin')
         <a href="/users" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-fw fa-user mr-3" aria-hidden="true"></i>User Accounts</a>
         @endcan
 
@@ -36,7 +36,7 @@ if (Auth::check()) {
     </div>
     <div>
         <p class="p-2 text-center text-secondary" style="font-size:0.75rem">
-            System Designed & Developed by <br>Nashath Nasik ICTA
+            nxlab
         </p>
     </div>
 @php

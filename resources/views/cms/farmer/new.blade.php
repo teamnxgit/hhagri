@@ -77,7 +77,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Phone</span>
                 </div>
-                {{Form::text('nic',null,['class'=>'form-control','placeholder'=>'Contact Number',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+                {{Form::text('phone',null,['class'=>'form-control','placeholder'=>'Contact Number',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
             </div>
 
             <div class="input-group mb-3">
