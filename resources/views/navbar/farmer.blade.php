@@ -5,9 +5,9 @@
     </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 pl-2">
-        <h6 class="navbar-brand" class="h-6">Farmer</h6>
+        <h6 class="navbar-brand" class="h-6">Grower Dtabase</h6>
           <li class="nav-item">
-            <a class="nav-link" href="/farmers">Farmers</a>
+            <a class="nav-link" href="/farmers">Growers</a>
           </li>
         </ul>
           <a class="btn btn-light" type="submit" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>

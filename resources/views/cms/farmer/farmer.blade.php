@@ -9,20 +9,20 @@
     
         <div class="row">
             <div class="col-12">
-            <div class="h3">{{$farmer->full_name}}</div>
+            <div class="h3">Grower : {{$farmer->full_name}}</div>
             </div>
         </div>
 
         <hr>
-        {!! Form::open(['url' => '/farmer/add']) !!}
+        {!! Form::open(['url' => '/farmer/update']) !!}
         <div class="p-3 bg-light border rounded row m-1 mt-3">
-            <div class="h5 col-12">Farmer Basic Details</div>
+            <div class="h5 col-12">Grower Basic Details</div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Farmer Code</span>
                 </div>
-                {{Form::text('person_id',$farmer->farmer_code,['class'=>'form-control','readonly'])}}
+                {{Form::text('farmer_code',$farmer->farmer_code,['class'=>'form-control','readonly'])}}
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -94,10 +94,19 @@
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">
-                        Data Entry
+                        Data Entry by
                     </span>
                 </div>
-                {{Form::text('created_by',$farmer->creator->name,['class'=>'form-control','placeholder'=>'Contact Number',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+                {{Form::text('created_by',$farmer->creator->name ." @ ".$farmer->created_at,['class'=>'form-control','placeholder'=>'Contact Number',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                        Data Updated by
+                    </span>
+                </div>
+                <input type="text" name="updated" value="<?php if (isset($farmer->updator)) {echo $farmer->updator->name ." @ ".$farmer->updated_at;}?>" class='form-control'>
             </div>
 
             <div class="input-group mb-3">

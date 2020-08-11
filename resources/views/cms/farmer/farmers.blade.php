@@ -9,10 +9,10 @@
     
         <div class="row">
             <div class="col-4">
-                <div class="h3">Farmer</div>
+                <div class="h3">Growers</div>
             </div>
             <div class="col-8 text-right">
-                <a class="btn btn-success text-light" href="/farmer/new/">+ Add New Farmer</a>
+                <a class="btn btn-success text-light" href="/farmer/new/">+ Add New Grower</a>
             </div>
         </div>
 
@@ -20,7 +20,7 @@
 
         {!! Form::open(['url' => '/farmers']) !!}
         <div class="p-3 bg-light border rounded row m-1">
-            <div class="h5 col-12">Search Farmer</div>
+            <div class="h5 col-12">Search Grower</div>
             {{Form::label('search',null,['class'=>'col-lg-1 pt-1'])}}
             {{Form::text('keyword',$keyword,['class'=>'form-control col-lg-9 mb-2','placeholder'=>'Search by Farmer Code | NIC | Name'])}}
             {{Form::submit('Search',['class'=>'btn btn-primary col-lg-1 ml-lg-2 mb-2'])}}
@@ -40,8 +40,8 @@
                     <tbody>
                         @foreach($farmers as $farmer)
                             <tr>
-                                <td>{{$farmer->farmer_code}}</td>
-                            <td><a href="farmer/{{$farmer->farmer_code}}">{{$farmer->full_name}}</a></td>
+                                <td><a href="farmer/{{$farmer->farmer_code}}">{{$farmer->farmer_code}}</a></td>
+                                <td>{{$farmer->full_name}}</td>
                                 <td>
                                     @can('Farmer Admin')
                                     {!! Form::open(['url' => '/farmer/rem']) !!}

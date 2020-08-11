@@ -6,7 +6,7 @@
     <div class="col-lg-12 p-3">
         <div class="row">
             <div class="col-12">
-                <div class="h3">New Farmer</div>
+                <div class="h3">New Grower</div>
             </div>
         </div>
         <hr>

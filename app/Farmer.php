@@ -12,4 +12,8 @@ class Farmer extends Model
     public function creator(){
         return $this->belongsTo(User::class,'created_by');
     }
+
+    public function updator(){
+        return $this->belongsTo(User::class,'updated_by');
+    }
 }

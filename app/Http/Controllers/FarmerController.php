@@ -56,7 +56,7 @@ class FarmerController extends Controller
         $farmer->created_by = $user->id;
         $farmer->save();
 
-        Session::flash('success','Farmer added to Database');
+        Session::flash('success','Grower added to Database');
         return Redirect::back();
     }
 
@@ -68,7 +68,31 @@ class FarmerController extends Controller
         $farmer = Farmer::findOrFail($request->input('farmer_code'));
         $farmer->delete();
 
-        Session::flash('success','Farmer removed from Database');
+        Session::flash('success','Grower removed from Database');
+        return Redirect('/farmers');
+    }
+
+    public function update(Request $request){
+        $user = Auth::user();
+
+        $request->validate([
+            'farmer_code'=>'required'
+        ]);
+
+        $farmer = Farmer::findOrFail($request->input('farmer_code'));
+
+        $farmer->title=$request->input('title');
+        $farmer->full_name=$request->input('full_name');
+        $farmer->short_name=$request->input('short_name');
+        $farmer->gender=$request->input('gender');
+        $farmer->nic=$request->input('nic');
+        $farmer->address=$request->input('address');
+        $farmer->phone=$request->input('phone');
+        $farmer->whatsapp=$request->input('whatsapp');
+        $farmer->updated_by=$user->id;
+        $farmer->save();
+
+        Session::flash('success','Grower details updated');
         return Redirect('/farmers');
     }
 }
