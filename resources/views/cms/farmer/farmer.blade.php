@@ -70,9 +70,30 @@
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Address</span>
+                    <span class="input-group-text" id="basic-addon1">House #</span>
                 </div>
-            <textarea name="address" id="" cols="30" rows="4" class="form-control">{{$farmer->address}}</textarea>
+                {{Form::text('hosue_no',$farmer->house_no,['class'=>'form-control','placeholder'=>'Number of the House',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Street</span>
+                </div>
+                {{Form::text('street',$farmer->street,['class'=>'form-control','placeholder'=>'Number of the Street',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Town</span>
+                </div>
+                {{Form::text('town',$farmer->town,['class'=>'form-control','placeholder'=>'Town / Village',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Town</span>
+                </div>
+                {{Form::text('district',$farmer->district,['class'=>'form-control','placeholder'=>'District',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
             </div>
 
             <div class="input-group mb-3">

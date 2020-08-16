@@ -40,7 +40,6 @@ class FarmerController extends Controller
             'gender'=>'required',
             'short_name'=>'required',
             'nic'=>'required',
-            'address'=>'required',
         ]);
 
         $farmer = New Farmer;
@@ -50,7 +49,10 @@ class FarmerController extends Controller
         $farmer->gender = $request->input('gender');
         $farmer->short_name = $request->input('short_name');
         $farmer->nic = $request->input('nic');
-        $farmer->address = $request->input('address');
+        $farmer->house_no = $request->input('house_no');
+        $farmer->street = $request->input('street');
+        $farmer->town = $request->input('town');
+        $farmer->district = $request->input('district');
         $farmer->phone = $request->input('phone');
         $farmer->whatsapp = $request->input('whatsapp');
         $farmer->created_by = $user->id;
@@ -86,13 +88,16 @@ class FarmerController extends Controller
         $farmer->short_name=$request->input('short_name');
         $farmer->gender=$request->input('gender');
         $farmer->nic=$request->input('nic');
-        $farmer->address=$request->input('address');
+        $farmer->house_no=$request->input('house_no');
+        $farmer->street=$request->input('street');
+        $farmer->town=$request->input('town');
+        $farmer->district=$request->input('district');
         $farmer->phone=$request->input('phone');
         $farmer->whatsapp=$request->input('whatsapp');
         $farmer->updated_by=$user->id;
         $farmer->save();
 
         Session::flash('success','Grower details updated');
-        return Redirect('/farmers');
+        return Redirect::back();
     }
 }

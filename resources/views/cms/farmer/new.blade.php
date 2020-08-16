@@ -68,9 +68,30 @@
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Address</span>
+                    <span class="input-group-text" id="basic-addon1">#</span>
                 </div>
-                <textarea name="address" id="" cols="30" rows="4" class="form-control"></textarea>
+                {{Form::text('house_no',null,['class'=>'form-control','placeholder'=>'House Number',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Street</span>
+                </div>
+                {{Form::text('street',null,['class'=>'form-control','placeholder'=>'Name of the street',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Town</span>
+                </div>
+                {{Form::text('town',null,['class'=>'form-control','placeholder'=>'Village / Town',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">District</span>
+                </div>
+                {{Form::text('district',null,['class'=>'form-control','placeholder'=>'District',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
             </div>
 
             <div class="input-group mb-3">
