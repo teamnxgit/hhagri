@@ -20,7 +20,7 @@ class CreateFarmersTable extends Migration
             $table->string('short_name');
             $table->string('gender');
             $table->string('nic');
-            $table->string('house_no');
+            $table->string('house_no')->nullable();
             $table->string('street');
             $table->string('town');
             $table->string('district');
