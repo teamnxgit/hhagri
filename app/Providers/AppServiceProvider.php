@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Builder::defaultStringLength(191); // Update defaultStringLength
+        
     }
 }

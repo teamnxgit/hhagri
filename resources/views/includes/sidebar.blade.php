@@ -28,6 +28,26 @@ if (Auth::check()) {
             <a href="/farmers" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-fw fa-male mr-3" aria-hidden="true"></i>Grower Database</a>
         @endcan
         
+        @can('Inventory Operator')
+            <a href="/inventory" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-fw fa-inventory mr-3" aria-hidden="true"></i>Inventory</a>
+        @endcan
+
+        @can('Sale Operator')
+            <a href="/sale" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-fw fa-money-bill mr-3" aria-hidden="true"></i>Sales</a>
+        @endcan
+
+        @can('Purchase Operator')
+            <a href="/purchase" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-shopping-cart mr-3" aria-hidden="true"></i>Purchases</a>
+        @endcan
+
+        @can('Accounts Operator')
+            <a href="/accounts" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-books mr-3" aria-hidden="true"></i>Accounts</a>
+        @endcan
+
+        @can('Accounts Operator')
+            <a href="/report" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-file-chart-line mr-3" aria-hidden="true"></i>Reports</a>
+        @endcan
+        
         @can('System Admin')
         <a href="/users" class="pl-4 list-group-item list-group-item-action bg-dark text-light"><i class="fa fa-fw fa-user mr-3" aria-hidden="true"></i>User Accounts</a>
         @endcan

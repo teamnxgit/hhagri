@@ -72,7 +72,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">House #</span>
                 </div>
-                {{Form::text('hosue_no',$farmer->house_no,['class'=>'form-control','placeholder'=>'Number of the House',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
+                {{Form::text('house_no',$farmer->house_no,['class'=>'form-control','placeholder'=>'Number of the House',"aria-label"=>"Full Name","aria-describedby"=>"basic-addon1"])}}
             </div>
 
             <div class="input-group mb-3">

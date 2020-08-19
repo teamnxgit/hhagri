@@ -16,6 +16,18 @@ class DatabaseSeeder extends Seeder
         $permissions = [
             ['name' => 'Farmer Operator'],
             ['name' => 'Farmer Admin'],
+
+            ['name' => 'Sale Operator'],
+            ['name' => 'Sale Admin'],
+
+            ['name' => 'Purchase Operator'],
+            ['name' => 'Purchase Admin'],
+
+            ['name' => 'Inventory Operator'],
+            ['name' => 'Inventory Admin'],
+
+            ['name' => 'Accounts Operator'],
+            ['name' => 'Accounts Admin'],
             
             ['name' => 'System Admin'],
         ];

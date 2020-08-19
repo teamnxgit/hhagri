@@ -30,6 +30,11 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/farmer/rem', 'FarmerController@rem');
     Route::post('/farmer/update', 'FarmerController@update');
 
+    //Inventory
+    Route::get('/inventory', 'InventoryController@items');
+    Route::get('/inventory/new', 'InventoryController@new');
+    Route::post('/inventory/add', 'InventoryController@add');
+
     // User
     Route::get('/users', 'UserController@index');
     Route::get('/user/{id}', 'UserController@user');
