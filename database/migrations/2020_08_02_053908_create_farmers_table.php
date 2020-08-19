@@ -31,7 +31,8 @@ class CreateFarmersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('farmers', function (Blueprint $table) {
+
+        Schema::table('farmers', function($table){
             $table->primary('farmer_code');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
