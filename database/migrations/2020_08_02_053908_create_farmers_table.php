@@ -14,6 +14,8 @@ class CreateFarmersTable extends Migration
     public function up()
     {
         Schema::create('farmers', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->string('farmer_code');
             $table->string('title');
             $table->string('full_name')->nullable();
@@ -30,7 +32,6 @@ class CreateFarmersTable extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
-
 
         Schema::table('farmers', function($table){
             $table->primary('farmer_code');
